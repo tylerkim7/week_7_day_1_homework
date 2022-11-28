@@ -7,10 +7,12 @@ let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
 function findWords(dog_string, dog_names){
-    if (dog_names.includes('dog')){
-        return "Matched dog_name"
-    } else{
-        return "No Matches"
+    for (i = 0; i < dog_names.length; i++){
+        if (dog_string.includes(dog_names[i])){
+            return "Matched dog_name"
+        } else{
+            return "No Matches"
+        }
     }
 }
 
@@ -36,3 +38,28 @@ console.log(replaceEvens(Given_arr))
 //Expected output
 //Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
 //Output arr == ["even index","Baseball","even index","Goku","even index","Rodger"]
+
+// CODEWARS PROBLEMS
+// Calculate Average: Write a function which calculates the average of the numbers in a given list.
+// Note: Empty arrays should return 0.
+
+function find_average(array) {
+    if (array.length > 0) {
+        let average = array.reduce((a, b) => a + b) / array.length
+        return average
+    } else {
+        return 0;
+    }
+}
+
+// Sum of positive: You get an array of numbers, return the sum of all of the positives ones.
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+// Note: if there is nothing to sum, the sum is default to 0.
+
+function positiveSum(arr) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > 0) sum += arr[i]
+    }
+    return sum
+}
